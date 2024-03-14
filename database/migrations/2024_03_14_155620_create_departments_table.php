@@ -11,17 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('departments', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->unsignedBigInteger('fk_department');
-            $table->unsignedBigInteger('fk_designation');
-            $table->string('phone_number');
             $table->timestamp('created_at')->useCurrent();
-            
-            // Foreign keys
-            $table->foreign('fk_department')->references('id')->on('departments');
-            $table->foreign('fk_designation')->references('id')->on('designations');
         });
     }
 
@@ -30,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('departments');
     }
 };

@@ -8,7 +8,7 @@ Welcome to the Laravel User Management System! This system allows you to manage 
   ```bash
   git clone <repository_url>
 
-1 cd laravel-user-management
+1 cd user-list-autocomplete
 2 composer install
 3 cp .env.example .env
 4 php artisan key:generate
